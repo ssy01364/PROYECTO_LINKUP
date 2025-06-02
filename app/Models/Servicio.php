@@ -23,9 +23,9 @@ class Servicio extends Model
     {
         return $this->belongsToMany(
             Empresa::class,
-            'empresas_servicios',  // tabla pivote
-            'servicio_id',         // FK pivote → this servicio
-            'empresa_id'           // FK pivote → empresas
+            'empresas_servicios',  
+            'servicio_id',         
+            'empresa_id'           
         );
     }
 

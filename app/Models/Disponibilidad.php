@@ -11,7 +11,6 @@ class Disponibilidad extends Model
 {
     use HasFactory;
 
-    // Ajusta el nombre si tu tabla es singular; si fue plural, cámbialo a 'disponibilidades'
     protected $table = 'disponibilidad';
 
     protected $fillable = [
@@ -20,7 +19,6 @@ class Disponibilidad extends Model
         'fin',
     ];
 
-    // Para que 'inicio' y 'fin' sean instancias de Carbon automáticamente
     protected $casts = [
         'inicio' => 'datetime',
         'fin'    => 'datetime',

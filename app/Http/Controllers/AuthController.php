@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Usuario;
 use App\Models\Role;
-use App\Models\Empresa;            // ← Importa Empresa
+use App\Models\Empresa;            
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;

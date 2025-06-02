@@ -22,16 +22,13 @@ class Usuario extends Authenticatable
         'password_hash',
         'role_id',
     ];
-
-    // Oculta el hash al serializar
+    
     protected $hidden = [
         'password_hash',
         'remember_token',
     ];
 
-    /**
-     * Necesario para que Sanctum use el campo password_hash
-     */
+    
     public function getAuthPassword()
     {
         return $this->password_hash;
@@ -42,13 +39,12 @@ class Usuario extends Authenticatable
         return $this->belongsTo(Role::class, 'role_id');
     }
 
-    // Si es empresa, relación a su registro en empresas
+    
     public function empresa(): HasOne
     {
         return $this->hasOne(Empresa::class, 'usuario_id');
     }
 
-    // Si es cliente, sus citas
     public function citas(): HasMany
     {
         return $this->hasMany(Cita::class, 'cliente_id');
